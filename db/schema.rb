@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212123440) do
+ActiveRecord::Schema.define(version: 20180213130209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,21 +37,21 @@ ActiveRecord::Schema.define(version: 20180212123440) do
     t.index ["castaway_id", "team_id"], name: "index_memberships_on_castaway_id_and_team_id", unique: true
   end
 
-  create_table "points", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "castaway_id", null: false
-    t.uuid "episode_id", null: false
-    t.uuid "scoring_event_id", null: false
-    t.integer "multiplier", default: 1, null: false
+  create_table "scoring_criteria", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "points", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["castaway_id", "episode_id", "scoring_event_id"], name: "index_points_on_castaway_id_and_episode_id_and_scoring_event_id", unique: true
   end
 
   create_table "scoring_events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "value", null: false
+    t.uuid "castaway_id", null: false
+    t.uuid "episode_id", null: false
+    t.uuid "scoring_criterion_id", null: false
+    t.integer "multiplier", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["castaway_id", "episode_id", "scoring_criterion_id"], name: "index_scoring_events_on_castaway_episode_scoring_criterion"
   end
 
   create_table "teams", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20180212123440) do
 
   add_foreign_key "memberships", "castaways"
   add_foreign_key "memberships", "teams"
-  add_foreign_key "points", "castaways"
-  add_foreign_key "points", "episodes"
-  add_foreign_key "points", "scoring_events"
+  add_foreign_key "scoring_events", "castaways"
+  add_foreign_key "scoring_events", "episodes"
+  add_foreign_key "scoring_events", "scoring_criteria"
 end

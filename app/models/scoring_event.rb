@@ -1,0 +1,2 @@
+class ScoringEvent < ApplicationRecord
+end

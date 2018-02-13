@@ -1,0 +1,9 @@
+<h1>Standings</h1>
+<table>
+  <% @teams.each do |team| %>
+    <tr>
+      <td><%= team.name %></td>
+      <td><%= team.castaways.map(&:first_name) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,9 +1,15 @@
 <h1>Standings</h1>
-<table>
-  <% @teams.each do |team| %>
+<% @teams.each.with_index(1) do |team, rank| %>
+  <table>
     <tr>
+      <td><%= rank.ordinalize %></td>
       <td><%= team.name %></td>
-      <td><%= team.castaways.map(&:first_name) %></td>
+      <td><%= team.points %></td>
     </tr>
-  <% end %>
-</table>
+    <tr>
+      <td></td>
+      <td><%= team.castaways.map(&:first_name).join(", ") %></td>
+      <td></td>
+    </tr>
+  </table>
+<% end %>

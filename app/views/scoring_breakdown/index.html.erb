@@ -1,0 +1,32 @@
+<h1>Scoring Breakdown</h1>
+<% @episodes.each do |episode| %>
+  <h2><%= episode.number %></h2>
+  <table>
+    <tr>
+      <td></td>
+      <% @castaways.each do |castaway| %>
+        <td>
+          <%= castaway.full_name %>
+        </td>
+      <% end %>
+    </tr>
+    <% @scoring_criteria.each do |scoring_criterion| %>
+      <tr>
+        <td>
+          <%= scoring_criterion.name %>
+        </td>
+        <% @castaways.each do |castaway| %>
+          <td>
+            <%= @scoring_events.detect do |scoring_event|
+              scoring_event.castaway == castaway &&
+                scoring_event.scoring_criterion == scoring_criterion &&
+                scoring_event.episode == episode
+            end.try(:points) || "-" %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+

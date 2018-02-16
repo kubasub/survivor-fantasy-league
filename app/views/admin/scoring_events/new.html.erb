@@ -1,0 +1,15 @@
+<h1>New Scoring Event</h1>
+<%= form_for @scoring_event, url: admin_scoring_events_path do |f| %>
+  Castaway:
+  <%= f.select :castaway_id, Castaway.all.map { |castaway| [castaway.full_name, castaway.id] }, include_blank: true %>
+  <br />
+  Episode:
+  <%= f.select :episode_id, Episode.all.map { |episode| [episode.number, episode.id] }, include_blank: true %>
+  <br />
+  Scoring Criterion:
+  <%= f.select :scoring_criterion_id, ScoringCriterion.all.map { |scoring_criterion| ["#{scoring_criterion.name} (#{scoring_criterion.points})", scoring_criterion.id] }, include_blank: true %>
+  <br />
+  Number of occurrences: <%= f.number_field :multiplier %>
+  <br />
+  <%= f.submit "Create Scoring Event" %>
+<% end %>

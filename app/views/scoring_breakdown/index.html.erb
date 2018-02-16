@@ -1,7 +1,11 @@
-<h1>Scoring Breakdown</h1>
+<h2>Scoring Breakdown</h2>
+<hr/>
 <% @episodes.each do |episode| %>
-  <h2><%= "#{episode.number} - #{episode.title}" %></h2>
-  <table>
+  <h3>
+    <%= "#{episode.number}" %>
+    <small class="text-muted"><%= "#{episode.title}" %></small>
+  </h3>
+  <table class="table table-sm table-responsive">
     <tr>
       <td></td>
       <% @castaways.each do |castaway| %>

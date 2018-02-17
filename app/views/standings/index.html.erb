@@ -1,23 +1,38 @@
-<h2>Standings</h2>
+<div class="row">
+  <div class="col">
+    <h2>Standings</h2>
+  </div>
+  <div class="col">
+    <%= link_to "Scoring Breakdown", scoring_breakdown_path, class: "float-right" %>
+  </div>
+</div>
 <hr/>
 <% @teams.each.with_index(1) do |team, rank| %>
-  <table>
-    <tr>
-      <td><%= rank.ordinalize %></td>
-      <td><%= team.name %></td>
-      <td><%= team.points %> <%= "Point".pluralize(team.points) %></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>
-        <% team.castaways.each do |castaway| %>
-          <div>
-            <%= image_tag castaway.headshot_url, class: "rounded-circle" %>
-            <small><%= castaway.full_name %></small>
+  <div class="container">
+    <div class="row">
+      <div class="col-1">
+        <h2><%= rank.ordinalize %></h2>
+      </div>
+      <div class="col-9">
+        <div class="row">
+          <div class="col">
+            <h4><%= team.name %></h4>
           </div>
-        <% end %>
-      </td>
-      <td></td>
-    </tr>
-  </table>
+        </div>
+        <div class="row">
+          <% team.castaways.each do |castaway| %>
+            <div class="col d-flex" style="flex-direction: column; align-items: center">
+              <%= image_tag castaway.headshot_url, class: "rounded-circle d-flex", width: "100px", height: "100px" %>
+              <small class="d-flex"><%= castaway.full_name %></small>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-2">
+        <h4><%= team.points %> <small class="text-muted"><%= "Pt".pluralize(team.points) %></small></h4>
+      </div>
+    </div>
+  </div>
+  <hr/>
 <% end %>
+

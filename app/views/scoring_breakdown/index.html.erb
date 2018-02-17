@@ -9,8 +9,9 @@
     <tr>
       <td></td>
       <% @castaways.each do |castaway| %>
-        <td>
-          <%= castaway.full_name %>
+        <td style="text-align: center; width: 5%">
+          <%= image_tag castaway.headshot_url, class: "rounded-circle", width: "50px", height: "50px" %>
+          <%= castaway.first_name %>
         </td>
       <% end %>
     </tr>
@@ -20,7 +21,7 @@
           <%= scoring_criterion.name %>
         </td>
         <% @castaways.each do |castaway| %>
-          <td>
+          <td style="text-align: center">
             <%= @scoring_events.detect do |scoring_event|
               scoring_event.castaway == castaway &&
                 scoring_event.scoring_criterion == scoring_criterion &&

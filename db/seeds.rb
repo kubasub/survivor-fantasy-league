@@ -44,7 +44,7 @@ Castaway.create([
   { first_name: "Bradley", last_name: "Kleihege" },
   { first_name: "James", last_name: "Lim" },
   { first_name: "Chris", last_name: "Noble" },
-  { first_name: "Sebantian", last_name: "Noel" },
+  { first_name: "Sebastian", last_name: "Noel" },
   { first_name: "Angela", last_name: "Perkins" },
   { first_name: "Morgan", last_name: "Ricke" },
   { first_name: "Brendan", last_name: "Shapiro" },

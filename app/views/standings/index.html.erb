@@ -9,7 +9,14 @@
     </tr>
     <tr>
       <td></td>
-      <td><%= team.castaways.map(&:first_name).join(", ") %></td>
+      <td>
+        <% team.castaways.each do |castaway| %>
+          <div>
+            <%= image_tag castaway.headshot_url, class: "rounded-circle" %>
+            <small><%= castaway.full_name %></small>
+          </div>
+        <% end %>
+      </td>
       <td></td>
     </tr>
   </table>

@@ -1,5 +1,5 @@
 class StandingsController < ApplicationController
   def index
-    @teams = Team.all
+    @ranked_teams = Leaderboard.new.ranked_teams
   end
 end

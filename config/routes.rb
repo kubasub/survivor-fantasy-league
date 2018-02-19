@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get :standings, to: "standings#index"
   get :scoring_breakdown, to: "scoring_breakdown#index"
 

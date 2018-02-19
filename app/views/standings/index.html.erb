@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="row">
-          <% team.castaways.each do |castaway| %>
+          <% order_castaways_for_standings(team.castaways).each do |castaway| %>
             <div class="col d-flex" style="flex-direction: column; align-items: center">
               <%= image_tag(
                 castaway.headshot_path,

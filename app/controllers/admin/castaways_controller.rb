@@ -1,7 +1,7 @@
 module Admin
   class CastawaysController < ApplicationController
     def index
-      @castaways = Castaway.all.order(:first_name)
+      @castaways = Castaway.all.order(:first_name, :last_name)
     end
 
     def edit

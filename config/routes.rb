@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :castaways
+    resources :episodes
     resources :scoring_events
     resources :teams
   end

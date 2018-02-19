@@ -1,0 +1,12 @@
+<h2>Episodes</h2>
+
+<%= link_to "New Episode", new_admin_episode_path, class: "btn btn-link" %>
+<ul class="list-group">
+  <% @episodes.each do |episode| %>
+    <li class="list-group-item">
+      <%= "#{episode.number} #{episode.title}" %>
+      <%= link_to "Edit", edit_admin_episode_path(episode) %>
+      <%= link_to "Delete", admin_episode_path(episode), data: { confirm: "Are you sure?" }, method: :delete %>
+    </li>
+  <% end %>
+</ul>

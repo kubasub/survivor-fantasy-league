@@ -1,0 +1,15 @@
+<h2>New Episode</h2>
+
+<%= form_for @episode, url: admin_episodes_path do |f| %>
+  <div class="form-group">
+    <label>Episode Number</label>
+    <%= f.number_field :number, class: "form-control", value: Episode.maximum(:number) + 1, readonly: true %>
+  </div>
+
+  <div class="form-group">
+    <label>Title</label>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Create Episode", class: "btn btn-primary" %>
+<% end %>

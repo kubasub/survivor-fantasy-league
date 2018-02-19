@@ -14,7 +14,12 @@
   <div class="form-group">
     <label>Castaways</label>
     <br/>
-    <%= f.select :castaway_ids, options_from_collection_for_select(Castaway.order(:first_name), :id, :full_name, @team.castaways.map(&:id)), { include_hidden: false }, { id: "team-castaways", multiple: true } %>
+    <%= f.select(
+      :castaway_ids,
+      options_from_collection_for_select(Castaway.order(:first_name), :id, :full_name, @team.castaways.map(&:id)),
+      { include_hidden: false },
+      { id: "team-castaways", multiple: true }
+    ) %>
   </div>
 
   <%= f.submit "Create Team", class: "btn btn-primary" %>

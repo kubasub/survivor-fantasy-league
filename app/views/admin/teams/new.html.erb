@@ -1,0 +1,30 @@
+<h2>New Team</h2>
+
+<%= form_for @team, url: admin_teams_path do |f| %>
+  <div class="form-group">
+    <label>Owner Name</label>
+    <%= f.text_field :owner_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Team Name</label>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Castaways</label>
+    <br/>
+    <%= f.select :castaway_ids, options_from_collection_for_select(Castaway.order(:first_name), :id, :full_name, @team.castaways.map(&:id)), { include_hidden: false }, { id: "team-castaways", multiple: true } %>
+  </div>
+
+  <%= f.submit "Create Team", class: "btn btn-primary" %>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+    $('#team-castaways').multiselect({
+      buttonContainer: '<div class="btn-group" />',
+      numberDisplayed: 5,
+    });
+  });
+</script>

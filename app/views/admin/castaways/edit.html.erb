@@ -1,0 +1,25 @@
+<h2>Edit Castaway</h2>
+
+<%= form_for @castaway, url: admin_castaway_path(@castaway) do |f| %>
+  <div class="form-group">
+    <label>First Name</label>
+    <%= f.text_field :first_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Last Name</label>
+    <%= f.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label>Headshot Filename</label>
+    <%= f.text_field :headshot_filename, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box :voted_out %>
+    <label>Has been voted out?</label>
+  </div>
+
+  <%= f.submit "Update Castaway", class: "btn btn-primary" %>
+<% end %>

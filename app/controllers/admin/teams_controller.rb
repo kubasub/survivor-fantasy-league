@@ -19,7 +19,6 @@ module Admin
 
     def update
       @team = Team.find(params.fetch(:id))
-      byebug
       @team.update(team_params)
       redirect_to admin_teams_path
     end

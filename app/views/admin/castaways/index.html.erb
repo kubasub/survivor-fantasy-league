@@ -1,0 +1,16 @@
+<h2>Castaways</h2>
+
+<ul class="list-group">
+  <% @castaways.each do |castaway| %>
+    <li class="list-group-item">
+      <%= image_tag(
+        castaway.headshot_path,
+        class: "#{"grey-headshot" if castaway.voted_out?} rounded-circle",
+        width: "50px",
+        height: "50px"
+      ) %>
+      <%= castaway.full_name %>
+      <%= link_to "Edit", edit_admin_castaway_path(castaway) %>
+    </li>
+  <% end %>
+</ul>

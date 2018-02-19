@@ -6,4 +6,8 @@ class Castaway < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def headshot_path
+    "/castaways/headshots/#{headshot_filename}"
+  end
 end

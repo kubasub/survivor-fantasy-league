@@ -3,7 +3,7 @@
     <h2>Standings</h2>
   </div>
   <div class="col">
-    <%= link_to "#{Emoji[:bar_chart]}&nbsp;&nbsp;Scoring Breakdown".html_safe, scoring_breakdown_path, class: "float-right" %>
+    <%= link_to "#{Emoji[:bar_chart]} Scoring Breakdown".html_safe, scoring_breakdown_path, class: "float-right" %>
   </div>
 </div>
 <hr/>
@@ -22,7 +22,7 @@
         <div class="row">
           <% team.castaways.each do |castaway| %>
             <div class="col d-flex" style="flex-direction: column; align-items: center">
-              <%= image_tag castaway.headshot_url, class: "rounded-circle d-flex", width: "100px", height: "100px" %>
+              <%= image_tag castaway.headshot_path, class: "rounded-circle d-flex", width: "100px", height: "100px" %>
               <small class="d-flex"><%= castaway.full_name %></small>
             </div>
           <% end %>

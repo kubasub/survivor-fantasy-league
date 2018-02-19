@@ -1,5 +1,5 @@
 module Admin
-  class CastawaysController < ApplicationController
+  class CastawaysController < AdminController
     def index
       @castaways = Castaway.all.order(:first_name, :last_name)
     end

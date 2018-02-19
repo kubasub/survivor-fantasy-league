@@ -1,5 +1,5 @@
 module Admin
-  class TeamsController < ApplicationController
+  class TeamsController < AdminController
     def index
       @teams = Team.order(:name)
     end

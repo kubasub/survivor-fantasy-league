@@ -1,5 +1,5 @@
 module Admin
-  class ScoringEventsController < ApplicationController
+  class ScoringEventsController < AdminController
     def new
       @scoring_event = ScoringEvent.new
     end

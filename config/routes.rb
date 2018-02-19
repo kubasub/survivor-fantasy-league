@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :episodes
     resources :scoring_events
     resources :teams
+
+    root to: "scoring_events#new"
   end
 
   root to: "welcome#index"

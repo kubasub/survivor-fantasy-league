@@ -1,5 +1,5 @@
 module Admin
-  class EpisodesController < ApplicationController
+  class EpisodesController < AdminController
     def index
       @episodes = Episode.order(number: :desc)
     end

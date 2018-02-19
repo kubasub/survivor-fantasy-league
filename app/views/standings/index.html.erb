@@ -28,13 +28,17 @@
                 width: "100px",
                 height: "100px"
               ) %>
-              <small class="d-flex"><%= castaway.full_name %></small>
+              <small><%= castaway.full_name %></small>
+              <%= castaway.points %>
             </div>
           <% end %>
         </div>
       </div>
       <div class="col-2">
-        <h4><%= team.score %> <small class="text-muted"><%= "Pt".pluralize(team.score) %></small></h4>
+        <h4>
+          <%= team.score %>
+          <small class="text-muted" style="font-size: 14px"><%= "Pt".pluralize(team.score) %></small>
+        </h4>
       </div>
     </div>
   </div>

@@ -10,4 +10,8 @@ class Castaway < ApplicationRecord
   def headshot_path
     "/castaways/headshots/#{headshot_filename}"
   end
+
+  def points
+    scoring_events.sum(&:points)
+  end
 end

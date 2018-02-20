@@ -10,29 +10,11 @@
 <% @ranked_teams.each do |team| %>
   <div class="container">
     <div class="row">
-      <div class="col-1">
+      <div class="col-12 col-sm-1" style="text-align: center">
         <h2><%= team.rank.ordinalize %></h2>
       </div>
       <div class="col-9">
-        <div class="row">
-          <div class="col">
-            <h4><%= team.name %></h4>
-          </div>
-        </div>
-        <div class="row">
-          <% order_castaways_for_standings(team.castaways).each do |castaway| %>
-            <div class="col d-flex" style="flex-direction: column; align-items: center">
-              <%= image_tag(
-                castaway.headshot_path,
-                class: "#{"grey-headshot" if castaway.voted_out?} rounded-circle d-flex",
-                width: "100px",
-                height: "100px"
-              ) %>
-              <small><%= castaway.full_name %></small>
-              <%= castaway.points %>
-            </div>
-          <% end %>
-        </div>
+        <h4><%= team.name %></h4>
       </div>
       <div class="col-2">
         <h4>
@@ -40,6 +22,20 @@
           <small class="text-muted" style="font-size: 14px"><%= "Pt".pluralize(team.score) %></small>
         </h4>
       </div>
+    </div>
+    <div class="row">
+      <% order_castaways_for_standings(team.castaways).each do |castaway| %>
+        <div class="col d-flex" style="flex-direction: column; align-items: center">
+          <%= image_tag(
+            castaway.headshot_path,
+            class: "#{"grey-headshot" if castaway.voted_out?} rounded-circle d-flex",
+            width: "100px",
+            height: "100px"
+          ) %>
+          <small><%= castaway.full_name %></small>
+          <%= castaway.points %>
+        </div>
+      <% end %>
     </div>
   </div>
   <hr/>

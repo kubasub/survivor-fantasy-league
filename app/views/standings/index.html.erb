@@ -13,7 +13,7 @@
       <div class="col-10">
         <h4><%= team.name %></h4>
       </div>
-      <div class="col-2">
+      <div class="col-2 text-right">
         <h4 style="white-space: nowrap">
           <%= team.score %>
           <small class="text-muted" style="font-size: 14px"><%= "Pt".pluralize(team.score) %></small>
@@ -26,8 +26,8 @@
           <%= image_tag(
             castaway.headshot_path,
             class: "#{"grey-headshot" if castaway.voted_out?} rounded-circle d-flex img-fluid mb-1",
-            width: "75x",
-            height: "75x"
+            width: "100x",
+            height: "100x"
           ) %>
           <small class="d-none d-sm-inline" style="white-space: nowrap"><%= "#{castaway.first_name} #{castaway.last_name[0]}." %></small>
           <%= castaway.points %>

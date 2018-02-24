@@ -23,6 +23,12 @@ module Admin
       redirect_to admin_teams_path
     end
 
+    def destroy
+      @team = Team.find(params.fetch(:id))
+      @team.destroy
+      redirect_to admin_teams_path
+    end
+
     private
 
     def team_params

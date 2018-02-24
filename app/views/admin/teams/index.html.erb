@@ -6,6 +6,7 @@
     <li class="list-group-item">
       <%= team.name %>
       <%= link_to "Edit", edit_admin_team_path(team) %>
+      <%= link_to "Delete", admin_team_path(team), data: { confirm: "Are you sure?" }, method: :delete %>
     </li>
   <% end %>
 </ul>

@@ -7,7 +7,7 @@ module Admin
     def create
       @scoring_event = ScoringEvent.new(create_params)
       @scoring_event.save!
-      redirect_to standings_path
+      redirect_to new_admin_scoring_event_path
     end
 
     private

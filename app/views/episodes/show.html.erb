@@ -43,7 +43,7 @@
             scoring_event.castaway == castaway &&
               scoring_event.scoring_criterion == scoring_criterion &&
               scoring_event.episode == @episode
-          end.try(:points) || "-" %>
+          end.try(:points) %>
         </td>
       <% end %>
     </tr>

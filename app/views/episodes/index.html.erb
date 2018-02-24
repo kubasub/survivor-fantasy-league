@@ -1,0 +1,18 @@
+<div class="row mt-2">
+  <div class="col">
+    <h2>Episodes</h2>
+  </div>
+  <div class="col">
+    <%= link_to "#{Emoji[:trophy]} Standings".html_safe, standings_path, class: "float-right" %>
+  </div>
+</div>
+<hr/>
+<div class="list-group">
+  <% @episodes.each do |episode| %>
+    <%= link_to episode_path(episode), class: "list-group-item list-group-item-action" do %>
+      <%= %(#{episode.number} "#{episode.title}") %>
+    <% end %>
+  <% end %>
+</div>
+
+

@@ -10,13 +10,10 @@
 <% @ranked_teams.each do |team| %>
   <div class="container">
     <div class="row">
-      <div class="col-12 col-sm-1" style="text-align: center">
-        <h2><%= team.rank.ordinalize %></h2>
-      </div>
-      <div class="col-10 col-sm-9">
+      <div class="col-10">
         <h4><%= team.name %></h4>
       </div>
-      <div class="col-2 col-sm-2">
+      <div class="col-2">
         <h4 style="white-space: nowrap">
           <%= team.score %>
           <small class="text-muted" style="font-size: 14px"><%= "Pt".pluralize(team.score) %></small>

@@ -3,7 +3,7 @@
     <h2>Standings</h2>
   </div>
   <div class="col">
-    <%= link_to "#{Emoji[:bar_chart]} Scoring Breakdown".html_safe, scoring_breakdown_path, class: "float-right" %>
+    <%= link_to "#{Emoji[:bar_chart]} Scoring Breakdown".html_safe, scoring_breakdown_path, class: "float-right", style: "white-space: nowrap" %>
   </div>
 </div>
 <hr/>
@@ -13,26 +13,26 @@
       <div class="col-12 col-sm-1" style="text-align: center">
         <h2><%= team.rank.ordinalize %></h2>
       </div>
-      <div class="col-9">
+      <div class="col-10 col-sm-9">
         <h4><%= team.name %></h4>
       </div>
-      <div class="col-2">
+      <div class="col-2 col-sm-2">
         <h4 style="white-space: nowrap">
           <%= team.score %>
           <small class="text-muted" style="font-size: 14px"><%= "Pt".pluralize(team.score) %></small>
         </h4>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-2">
       <% order_castaways_for_standings(team.castaways).each do |castaway| %>
         <div class="col d-flex" style="flex-direction: column; align-items: center">
           <%= image_tag(
             castaway.headshot_path,
-            class: "#{"grey-headshot" if castaway.voted_out?} rounded-circle d-flex",
+            class: "#{"grey-headshot" if castaway.voted_out?} rounded-circle d-flex img-fluid mb-1",
             width: "75x",
             height: "75x"
           ) %>
-          <small style="white-space: nowrap"><%= "#{castaway.first_name} #{castaway.last_name[0]}." %></small>
+          <small class="d-none d-sm-inline" style="white-space: nowrap"><%= "#{castaway.first_name} #{castaway.last_name[0]}." %></small>
           <%= castaway.points %>
         </div>
       <% end %>

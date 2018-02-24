@@ -20,11 +20,13 @@
   <%= f.submit "Update Team", class: "btn btn-primary" %>
 <% end %>
 
-<script>
-  $(document).ready(function() {
-    $('#team-castaways').multiselect({
-      buttonContainer: '<div class="btn-group" />',
-      numberDisplayed: 5,
+<%= content_for :page_specific_js do %>
+  <script>
+    $(document).ready(function() {
+      $('#team-castaways').multiselect({
+        buttonContainer: '<div class="btn-group" />',
+        numberDisplayed: 5,
+      });
     });
-  });
-</script>
+  </script>
+<% end %>

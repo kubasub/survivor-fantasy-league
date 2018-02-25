@@ -1,0 +1,12 @@
+{
+  "short_name": "SFL 36",
+  "name": "Survivor Fantasy League 36",
+  "icons": [
+    {
+      "src": "icons/apple-touch-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    }
+  ],
+  "start_url": "/"
+}

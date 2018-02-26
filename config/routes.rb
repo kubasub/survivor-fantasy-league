@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get :standings, to: "standings#index"
 
   resources :episodes
+  resources :scoring_criteria, only: :index
 
   namespace :admin do
     resources :castaways

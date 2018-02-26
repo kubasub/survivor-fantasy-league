@@ -1,0 +1,22 @@
+<div class="mt-2">
+  <h2>Scoring System</h2>
+</div>
+
+<hr/>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Event</td>
+      <th scope="col">Points per Occurrence</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @scoring_criteria.each do |scoring_criterion| %>
+      <tr>
+        <td><%= scoring_criterion.name %></td>
+        <td><%= scoring_criterion.points %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

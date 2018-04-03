@@ -8,7 +8,10 @@
   <div class="container">
     <div class="row">
       <div class="col-10">
-        <h4 class="d-inline"><%= team.name %></h4>
+        <span class="badge badge-pill badge-secondary" style="vertical-align: super"><%= team.rank.ordinalize %></span>
+        <h4 class="d-inline">
+          <%= team.name %>
+        </h4>
         <small>(<%= team.owner_name %>)</small>
       </div>
       <div class="col-2 text-right">

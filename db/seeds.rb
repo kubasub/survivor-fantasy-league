@@ -1,8 +1,29 @@
+# Season 36
+# ScoringCriterion.create([
+#   { name: "1st Team Immunity", points: 3 },
+#   { name: "2nd Team Immunity", points: 2 },
+#   { name: "1st Team Reward", points: 2 },
+#   { name: "2nd Team Reward", points: 1 },
+#   { name: "Won Individual Immunity", points: 5 },
+#   { name: "Won Individual Reward", points: 3 },
+#   { name: "Joined Individual Reward", points: 1 },
+#   { name: "Found Immunity Idol", points: 5 },
+#   { name: "Found Immunity Idol Clue", points: 2 },
+#   { name: "Received a Vote", points: -1 },
+#   { name: "Voted Off", points: -2 },
+#   { name: "Medical Evac/Pulled", points: -2 },
+#   { name: "Quit", points: -3 },
+#   { name: "Reached Merge", points: 2 },
+#   { name: "Reached Final 3", points: 5 },
+#   { name: "Won Survivor", points: 12 },
+# ])
+
+# Season 38
 ScoringCriterion.create([
-  { name: "1st Team Immunity", points: 3 },
-  { name: "2nd Team Immunity", points: 2 },
-  { name: "1st Team Reward", points: 2 },
-  { name: "2nd Team Reward", points: 1 },
+  { name: "1st in Team Immunity", points: 3 },
+  { name: "2nd in Team Immunity", points: 2 },
+  { name: "1st in Team Reward", points: 2 },
+  { name: "2nd in Team Reward", points: 1 },
   { name: "Won Individual Immunity", points: 5 },
   { name: "Won Individual Reward", points: 3 },
   { name: "Joined Individual Reward", points: 1 },
@@ -12,9 +33,19 @@ ScoringCriterion.create([
   { name: "Voted Off", points: -2 },
   { name: "Medical Evac/Pulled", points: -2 },
   { name: "Quit", points: -3 },
-  { name: "Reached Merge", points: 2 },
-  { name: "Reached Final 3", points: 5 },
+  { name: "Reached the Merge", points: 2 },
+  { name: "Reached the Final 3", points: 5 },
   { name: "Won Survivor", points: 12 },
+  { name: "Played Immunity Idol on Themselves", points: 2 },
+  { name: "Gave Immunity Idol Away or Played it for Another Player", points: 2 },
+  { name: "Got a Clue to a Game Advantage", points: 1 },
+  { name: "Got a Game Advantage", points: 2 },
+  { name: "Used a Game Advantage", points: 2 },
+  { name: "Chose to go to Extinction Island", points: 1 },
+  { name: "Re-entered the Game from Extinction Island", points: 5 },
+  { name: "Created a Used Fake Immunity Idol", points: 3 },
+  { name: "Played a Fake Immunity Idol", points: -3 },
+  { name: "Voted out with Immunity Idol or Game Advantage", points: -3 },
 ])
 
 # Season 36

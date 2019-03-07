@@ -1,5 +1,9 @@
 module Admin
   class ScoringEventsController < AdminController
+    def index
+      @scoring_events = ScoringEvent.all
+    end
+
     def new
       @scoring_event = ScoringEvent.new
     end
@@ -8,6 +12,12 @@ module Admin
       @scoring_event = ScoringEvent.new(create_params)
       @scoring_event.save!
       redirect_to new_admin_scoring_event_path
+    end
+
+    def destroy
+      @scoring_event = ScoringEvent.find(params.fetch(:id))
+      @scoring_event.destroy
+      redirect_to admin_scoring_events_path
     end
 
     private

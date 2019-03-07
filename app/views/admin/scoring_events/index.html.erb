@@ -1,0 +1,12 @@
+<h2>Scoring Events</h2>
+
+<%= link_to "New Scoring Event", new_admin_scoring_event_path, class: "btn btn-link" %>
+<ul class="list-group">
+  <% @scoring_events.each do |scoring_event| %>
+    <li class="list-group-item">
+      <%= "[Ep. #{scoring_event.episode.number}] #{scoring_event.castaway.full_name}: #{scoring_event.scoring_criterion.name}" %>
+      <%= link_to "Edit", edit_admin_scoring_event_path(scoring_event) %>
+      <%= link_to "Delete", admin_scoring_event_path(scoring_event), data: { confirm: "Are you sure?" }, method: :delete %>
+    </li>
+  <% end %>
+</ul>

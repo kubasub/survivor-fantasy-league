@@ -9,8 +9,8 @@
     "popper.js": "^1.12.9"
   },
   "engines": {
-    "node": "11.2.0",
-    "yarn": "1.10.1"
+    "node": "11.x",
+    "yarn": "1.x"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1"

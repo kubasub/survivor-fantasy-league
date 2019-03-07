@@ -8,8 +8,11 @@
   <br />
   Scoring Criterion:
   <%= f.select :scoring_criterion_id, ScoringCriterion.all.map { |scoring_criterion| ["#{scoring_criterion.name} (#{scoring_criterion.points})", scoring_criterion.id] }, include_blank: true %>
-  <br />
-  Number of occurrences: <%= f.number_field :multiplier %>
-  <br />
-  <%= f.submit "Create Scoring Event" %>
+
+  <div class="form-group">
+    <label>Number of occurrences</label>
+    <%= f.number_field :multiplier, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Create Scoring Event", class: "btn btn-primary" %>
 <% end %>

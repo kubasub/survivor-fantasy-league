@@ -1,7 +1,7 @@
 module Admin
   class ScoringEventsController < AdminController
     def index
-      @scoring_events = ScoringEvent.all
+      @scoring_events = ScoringEvent.order(created_at: :desc)
     end
 
     def new

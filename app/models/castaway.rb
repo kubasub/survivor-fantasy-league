@@ -1,4 +1,6 @@
 class Castaway < ApplicationRecord
+  SEASON = 39
+
   has_many :memberships
   has_many :teams, through: :memberships
   has_many :scoring_events
@@ -8,7 +10,7 @@ class Castaway < ApplicationRecord
   end
 
   def headshot_path
-    "/castaways/headshots/#{headshot_filename}"
+    "/castaways/headshots/#{SEASON}/#{headshot_filename}"
   end
 
   def points

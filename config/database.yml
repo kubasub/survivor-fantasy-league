@@ -7,10 +7,12 @@ default: &default
 development:
   <<: *default
   database: sfl_development
+  host: "0.0.0.0"
 
 test:
   <<: *default
   database: sfl_test
+  host: "0.0.0.0"
 
 production:
   <<: *default

@@ -9,9 +9,13 @@ module Admin
     end
 
     def create
+      scoring_event = ScoringEvent.new(create_params)
+      scoring_event.save!
+
       @scoring_event = ScoringEvent.new(create_params)
-      @scoring_event.save!
-      redirect_to new_admin_scoring_event_path
+
+      flash.now[:thing] = "Created scoring event. #{scoring_event.castaway.full_name}; #{scoring_event.scoring_criterion.name}."
+      render :new
     end
 
     def destroy

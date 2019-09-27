@@ -34,6 +34,9 @@
           </li>
         </ul>
       </div>
+      <% if user_signed_in? %>
+        <%= link_to "Admin", admin_root_path, class: "navbar-text float-right" %>
+      <% end %>
     </nav>
 
     <div class="container-fluid">

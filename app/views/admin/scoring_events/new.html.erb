@@ -1,13 +1,21 @@
-<h1>New Scoring Event</h1>
+<h2>New Scoring Event</h2>
+
 <%= form_for @scoring_event, url: admin_scoring_events_path do |f| %>
-  Castaway:
-  <%= f.select :castaway_id, Castaway.all.order(:voted_out, :first_name).map { |castaway| [castaway.full_name, castaway.id] }, include_blank: true %>
-  <br />
-  Episode:
-  <%= f.select :episode_id, Episode.all.order(number: :desc).map { |episode| [episode.number, episode.id] } %>
-  <br />
-  Scoring Criterion:
-  <%= f.select :scoring_criterion_id, ScoringCriterion.all.map { |scoring_criterion| ["#{scoring_criterion.name} (#{scoring_criterion.points})", scoring_criterion.id] }, include_blank: true %>
+  <div class="form-group">
+    Castaway:
+    <%= f.select :castaway_id, Castaway.all.order(:voted_out, :first_name).map { |castaway| [castaway.full_name, castaway.id] }, include_blank: true %>
+  </div>
+
+  <div class="form-group">
+    Episode:
+    <%= f.select :episode_id, Episode.all.order(number: :desc).map { |episode| [episode.number, episode.id] } %>
+  </div>
+
+  <div class="form-group">
+    Scoring Criterion:
+    <%= f.select :scoring_criterion_id, ScoringCriterion.all.map { |scoring_criterion| ["#{scoring_criterion.name} (#{scoring_criterion.points})", scoring_criterion.id] }, include_blank: true %>
+
+  </div>
 
   <div class="form-group">
     <label>Number of occurrences</label>

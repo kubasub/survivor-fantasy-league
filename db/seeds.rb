@@ -49,6 +49,37 @@
 # ])
 
 # Season 39
+# ScoringCriterion.create([
+#   { name: "1st in Team Immunity", points: 3 },
+#   { name: "2nd in Team Immunity", points: 2 },
+#   { name: "1st in Team Reward", points: 2 },
+#   { name: "2nd in Team Reward", points: 1 },
+#   { name: "Won Individual Immunity", points: 5 },
+#   { name: "Won Individual Reward", points: 3 },
+#   { name: "Joined Individual Reward", points: 1 },
+#   { name: "Found Immunity Idol", points: 5 },
+#   { name: "Found Immunity Idol Clue", points: 2 },
+#   { name: "Received a Vote", points: -1 },
+#   { name: "Voted Off", points: -2 },
+#   { name: "Medical Evac/Pulled", points: -2 },
+#   { name: "Quit", points: -3 },
+#   { name: "Reached the Merge", points: 2 },
+#   { name: "Won Fire-making at Tribal Council", points: 3 },
+#   { name: "Reached the Final 3", points: 5 },
+#   { name: "Won Survivor", points: 12 },
+#   { name: "Played Immunity Idol on Themselves", points: 2 },
+#   { name: "Gave Immunity Idol Away or Played it for Another Player", points: 2 },
+#   { name: "Got a Clue to a Game Advantage", points: 1 },
+#   { name: "Got a Game Advantage", points: 2 },
+#   { name: "Used a Game Advantage", points: 2 },
+#   { name: "Created a Used Fake Immunity Idol", points: 3 },
+#   { name: "Played a Fake Immunity Idol", points: -3 },
+#   { name: "Voted out with Immunity Idol or Game Advantage", points: -3 },
+#   { name: "Went to Island of the Idols", points: 1 },
+#   { name: "Won Challenge on Island of the Idols", points: 2 },
+# ])
+
+# Season 40
 ScoringCriterion.create([
   { name: "1st in Team Immunity", points: 3 },
   { name: "2nd in Team Immunity", points: 2 },
@@ -64,19 +95,18 @@ ScoringCriterion.create([
   { name: "Medical Evac/Pulled", points: -2 },
   { name: "Quit", points: -3 },
   { name: "Reached the Merge", points: 2 },
-  { name: "Won Fire-making at Tribal Council", points: 3 },
+  { name: "Wins a fire-making challenge at Tribal Council", points: 3 },
   { name: "Reached the Final 3", points: 5 },
-  { name: "Won Survivor", points: 12 },
-  { name: "Played Immunity Idol on Themselves", points: 2 },
-  { name: "Gave Immunity Idol Away or Played it for Another Player", points: 2 },
+  { name: "Won Survivor", points: 1 },
+  { name: "Correctly Played Immunity Idol on Themselves or Another Player", points: 2 },
   { name: "Got a Clue to a Game Advantage", points: 1 },
   { name: "Got a Game Advantage", points: 2 },
   { name: "Used a Game Advantage", points: 2 },
   { name: "Created a Used Fake Immunity Idol", points: 3 },
   { name: "Played a Fake Immunity Idol", points: -3 },
   { name: "Voted out with Immunity Idol or Game Advantage", points: -3 },
-  { name: "Went to Island of the Idols", points: 1 },
-  { name: "Won Challenge on Island of the Idols", points: 2 },
+  { name: "Chose to go to Extinction Island", points: 1 },
+  { name: "Re-entered the Game from Extinction Island", points: 5 }
 ])
 
 # Season 36
@@ -92,9 +122,15 @@ ScoringCriterion.create([
 # ])
 
 # Season 39
+# Episode.create([
+#   { number: 1, title: "I Vote You Out and That's It" },
+#   { number: 2, title: "YOLO, Let's Play!" },
+# ])
+
+# Season 40
 Episode.create([
-  { number: 1, title: "I Vote You Out and That's It" },
-  { number: 2, title: "YOLO, Let's Play!" },
+  { number: 1, title: "Greatest of the Greats" },
+  { number: 2, title: "It's Like a Survivor Economy" },
 ])
 
 # Season 36
@@ -144,25 +180,49 @@ Episode.create([
 # ])
 
 # Season 39
+# Castaway.create([
+#   { first_name: "Aaron", last_name: "Meredith", headshot_filename: "aaron_meredith.jpg" },
+#   { first_name: "Chelsea", last_name: "Walker", headshot_filename: "chelsea_walker.jpg" },
+#   { first_name: "Dan", last_name: "Spilo", headshot_filename: "dan_spilo.jpg" },
+#   { first_name: "Dean", last_name: "Kowalski", headshot_filename: "dean_kowalski.jpg" },
+#   { first_name: "Elaine", last_name: "Stott", headshot_filename: "elaine_stott.jpg" },
+#   { first_name: "Elizabeth", last_name: "Beisel", headshot_filename: "elizabeth_beisel.jpg" },
+#   { first_name: "Jack", last_name: "Nichting", headshot_filename: "jack_nichting.jpg" },
+#   { first_name: "Jamal", last_name: "Shipman", headshot_filename: "jamal_shipman.jpg" },
+#   { first_name: "Janet", last_name: "Carbin", headshot_filename: "janet_carbin.jpg" },
+#   { first_name: "Jason", last_name: "Linden", headshot_filename: "jason_linden.jpg" },
+#   { first_name: "Karishma", last_name: "Patel", headshot_filename: "karishma_patel.jpg" },
+#   { first_name: "Kellee", last_name: "Kim", headshot_filename: "kellee_kim.jpg" },
+#   { first_name: "Lauren", last_name: "Beck", headshot_filename: "lauren_beck.jpg" },
+#   { first_name: "Missy", last_name: "Byrd", headshot_filename: "missy_byrd.jpg" },
+#   { first_name: "Molly", last_name: "Byman", headshot_filename: "molly_byman.jpg" },
+#   { first_name: "Noura", last_name: "Salman", headshot_filename: "noura_salman.jpg" },
+#   { first_name: "Ronnie", last_name: "Bardah", headshot_filename: "ronnie_bardah.jpg" },
+#   { first_name: "Tom", last_name: "Laidlaw", headshot_filename: "tom_laidlaw.jpg" },
+#   { first_name: "Tommy", last_name: "Sheehan", headshot_filename: "tommy_sheehan.jpg" },
+#   { first_name: "Vince", last_name: "Moua", headshot_filename: "vince_moua.jpg" },
+# ])
+
+# Season 40
 Castaway.create([
-  { first_name: "Aaron", last_name: "Meredith", headshot_filename: "aaron_meredith.jpg" },
-  { first_name: "Chelsea", last_name: "Walker", headshot_filename: "chelsea_walker.jpg" },
-  { first_name: "Dan", last_name: "Spilo", headshot_filename: "dan_spilo.jpg" },
-  { first_name: "Dean", last_name: "Kowalski", headshot_filename: "dean_kowalski.jpg" },
-  { first_name: "Elaine", last_name: "Stott", headshot_filename: "elaine_stott.jpg" },
-  { first_name: "Elizabeth", last_name: "Beisel", headshot_filename: "elizabeth_beisel.jpg" },
-  { first_name: "Jack", last_name: "Nichting", headshot_filename: "jack_nichting.jpg" },
-  { first_name: "Jamal", last_name: "Shipman", headshot_filename: "jamal_shipman.jpg" },
-  { first_name: "Janet", last_name: "Carbin", headshot_filename: "janet_carbin.jpg" },
-  { first_name: "Jason", last_name: "Linden", headshot_filename: "jason_linden.jpg" },
-  { first_name: "Karishma", last_name: "Patel", headshot_filename: "karishma_patel.jpg" },
-  { first_name: "Kellee", last_name: "Kim", headshot_filename: "kellee_kim.jpg" },
-  { first_name: "Lauren", last_name: "Beck", headshot_filename: "lauren_beck.jpg" },
-  { first_name: "Missy", last_name: "Byrd", headshot_filename: "missy_byrd.jpg" },
-  { first_name: "Molly", last_name: "Byman", headshot_filename: "molly_byman.jpg" },
-  { first_name: "Noura", last_name: "Salman", headshot_filename: "noura_salman.jpg" },
-  { first_name: "Ronnie", last_name: "Bardah", headshot_filename: "ronnie_bardah.jpg" },
-  { first_name: "Tom", last_name: "Laidlaw", headshot_filename: "tom_laidlaw.jpg" },
-  { first_name: "Tommy", last_name: "Sheehan", headshot_filename: "tommy_sheehan.jpg" },
-  { first_name: "Vince", last_name: "Moua", headshot_filename: "vince_moua.jpg" },
+  { first_name: "Adam", last_name: "Klein", headshot_filename: "adam_klein.jpg" },
+  { first_name: "Amber", last_name: "Mariano", headshot_filename: "amber_mariano.jpg" },
+  { first_name: "Ben", last_name: "Driebergen", headshot_filename: "ben_driebergen.jpg" },
+  { first_name: "Danni", last_name: "Boatwright", headshot_filename: "danni_boatwright.jpg" },
+  { first_name: "Denise", last_name: "Stapley", headshot_filename: "denise_stapley.jpg" },
+  { first_name: "Ethan", last_name: "Zohn", headshot_filename: "ethan_zohn.jpg" },
+  { first_name: "Jeremy", last_name: "Collins", headshot_filename: "jeremy_collins.jpg" },
+  { first_name: "Kim", last_name: "Spradlin-Wolfe", headshot_filename: "kim_spradlin_wolfe" },
+  { first_name: "Michele", last_name: "Fitzgerald", headshot_filename: "michele_fitzgerald.jpg" },
+  { first_name: "Natalie", last_name: "Anderson", headshot_filename: "natalie_anderson.jpg" },
+  { first_name: "Nick", last_name: "Wilson", headshot_filename: "nick_wilson.jpg" },
+  { first_name: "Parvati", last_name: "Shallow", headshot_filename: "parvati_shallow.jpg" },
+  { first_name: "Rob", last_name: "Mariano", headshot_filename: "rob_mariano.jpg" },
+  { first_name: "Sandra", last_name: "Diaz-Twine", headshot_filename: "sandra_diaz_twine" },
+  { first_name: "Sarah", last_name: "Lacina", headshot_filename: "sarah_lacina.jpg" },
+  { first_name: "Sophie", last_name: "Clarke", headshot_filename: "sophie_clarke.jpg" },
+  { first_name: "Tony", last_name: "Vlachos", headshot_filename: "tony_vlachos.jpg" },
+  { first_name: "Tyson", last_name: "Apostol", headshot_filename: "tyson_apostol.jpg" },
+  { first_name: "Wendell", last_name: "Holland", headshot_filename: "wendell_holland.jpg" },
+  { first_name: "Yul", last_name: "Kwon", headshot_filename: "yul_kwon.jpg" }
 ])

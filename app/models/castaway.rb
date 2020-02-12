@@ -1,5 +1,5 @@
 class Castaway < ApplicationRecord
-  SEASON = 39
+  SEASON = 40
 
   has_many :memberships
   has_many :teams, through: :memberships

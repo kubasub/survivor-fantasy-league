@@ -2,9 +2,9 @@
   <h2>Standings</h2>
 </div>
 
-<hr />
-
 <% if @episodes.count > 1 %>
+  <hr />
+
   <%= line_chart @line_chart_data, discrete: true %>
 <% end %>
 

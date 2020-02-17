@@ -4,7 +4,9 @@
 
 <hr />
 
-<%= line_chart @line_chart_data, discrete: true %>
+<% if @episodes.count > 1 %>
+  <%= line_chart @line_chart_data, discrete: true %>
+<% end %>
 
 <hr />
 
